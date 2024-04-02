@@ -1,0 +1,23 @@
+{% extends 'dash.html' %}
+{% block content %}
+
+<h4 class="text-center pt-5  text-light">Delete Affiliation</h4>
+<h4 class="text-center pb-5  text-light">Are you sure you want to delete </h4>
+    
+<div style="width: 100%;display: flex;justify-content: center;height: 100%;align-items: center;">
+
+
+
+  
+  
+    <br>
+    <form class="text-light" method="post">
+      {% csrf_token %}
+      <button class="btn btn-danger  text-light" type="submit">Delete</button>
+    </form>
+    
+  </div>
+  {% endblock %}
+  
+  
+

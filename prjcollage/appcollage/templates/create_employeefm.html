@@ -1,0 +1,13 @@
+{% extends 'dash.html' %}
+{% block content %}
+
+<h4 class="text-center pt-5  text-light">Create employees</h4>
+<div class="container w-50">
+    <form class="text-light" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ fm.as_p }}
+        <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

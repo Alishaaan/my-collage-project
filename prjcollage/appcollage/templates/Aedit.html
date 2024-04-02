@@ -1,0 +1,18 @@
+{% extends 'dash.html' %}
+
+{% block content %}
+<h2 class=" text-light text-center">Edit Affiliation </h2>
+
+<div style="width: 100%;display: flex;justify-content: center;height: 100%;align-items: center;">
+    
+<form class="text-light" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Update</button>
+</form>
+  </div>
+  
+  
+  
+  
+{% endblock %}

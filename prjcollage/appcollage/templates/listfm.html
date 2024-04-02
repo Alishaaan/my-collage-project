@@ -1,0 +1,17 @@
+{% extends 'dash.html' %}
+{% block content %}
+
+        <h4 class="text-center pt-5 text-center" >List_College </h4>
+        <div class="w-50 container">
+            <form class="text-light" action="" method="post">
+                {% csrf_token %}
+        
+              {{fm.as_p}}
+             <a href="{% url 'lresult'  %}"><input type="submit" class="btn btn-success" value="Submit"></a>
+             
+            </form>
+            
+        </div>
+    
+    
+{% endblock %}

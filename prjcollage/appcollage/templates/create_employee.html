@@ -1,0 +1,50 @@
+{% extends 'dash.html' %}
+{% block content %}
+
+<h3 class="text-center text-light">  EMPLOYEES</h3>
+
+    
+    <div style="float: right;"><a href="{% url 'ceforms' %}"class="btn btn-dark btn btn-outline-primary"><span style="color: white;">CREATE A EMPLOYEES </span> <span class="text-light"><i class="fa-solid fa-plus"></i></span></a></div>
+
+
+<br><br><br>
+<div>
+    <table class="table table-dark table-hover table-bordered border-light">
+        <thead class="table-active table-primary table-bordered border-light ">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Phone_Number</th>
+                <th scope="col">Employee_Role</th>
+                <th scope="col">Target_Per_Month</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stu in stu %}
+            <tr>
+                <th scope="row">{{ stu.id }}</th>
+                <td>{{ stu.name }}</td>
+                <td>{{ stu.email }}</td>
+                <td>{{ stu.branch }}</td>
+                <td>{{ stu.phone_number }}</td>
+                <td>{{ stu.employee_role }}</td>
+                <td>{{ stu.target_per_month }}</td>
+                
+               
+                <td>
+                    <a href="{% url 'edit_create_employee' stu.id %}" class="btn btn-success">UPDATE <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-recycle" viewBox="0 0 16 16">
+                        <path d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.5.5 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244z"/>
+                      </svg></a>
+                    <a href="{% url 'delete_create_employee' stu.id %}" class="btn btn-danger">DELETE<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                      </svg></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
