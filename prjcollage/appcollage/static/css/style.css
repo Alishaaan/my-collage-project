@@ -60,3 +60,14 @@
     transform: scale(1.1);
     transition: 0.3s, transform 0.3s;
   }
+
+  .rounded-circle-icon {
+    width: 50px; /* Adjust size as needed */
+    height:50px; /* Adjust size as needed */
+    background-color:rgba(235, 51, 106, 0.8);/* Adjust background color */
+    border-radius: 50%; /* Creates a rounded circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Adjust icon size */
+  }
